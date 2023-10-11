@@ -8,7 +8,7 @@ LONG_DESCRIPTION = 'Paquete de canales de notificaciones de kemok'
 setup(
        # el nombre debe coincidir con el nombre de la carpeta 	  
        #'modulomuysimple'
-        name="notificationServiceTest", 
+        name="notificationPackage", 
         version=VERSION,
         author="Carlos Pacheco",
         license='MIT',
