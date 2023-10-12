@@ -1,18 +1,14 @@
 from email.message import EmailMessage
 import smtplib
 
-def send_mail():
+def send_mail(template, sender, sender_psw,subject,to):
     try:
-        sender = "carlos.pacheco@kemok.io"
-        to = "carlos.pacheco@kemok.io"
-        message = "¡Hola, mundo!"
         email = EmailMessage()
         email["From"] = sender
         email["To"] = to
-        email["Subject"] = "Correo de prueba"
-        email.set_content(message)
+        email["Subject"] = subject
         smtp = smtplib.SMTP_SSL("smtp.gmail.com")
-        smtp.login(sender, "wjlu gasr bmlg ceyf")
+        smtp.login(sender, sender_psw)
         smtp.sendmail(sender, to, email.as_string())
         smtp.quit()
         print('Email enviado a ', to)
