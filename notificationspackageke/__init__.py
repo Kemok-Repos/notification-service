@@ -1,2 +1,1 @@
-from notificationspackageke.notificationmethods import *
 
