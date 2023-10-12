@@ -1,1 +1,0 @@
-from notificationMethods import mail

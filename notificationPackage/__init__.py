@@ -1,2 +1,0 @@
-from notificationPackage.notificationMethods import *
-
