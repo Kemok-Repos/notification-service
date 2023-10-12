@@ -1,6 +1,6 @@
 from setuptools import setup
 
-VERSION = '0.0.4' 
+VERSION = '0.0.5' 
 DESCRIPTION = 'Paquete de notificaciones kemok'
 LONG_DESCRIPTION = 'Paquete de canales de notificaciones de kemok'
 
@@ -14,5 +14,5 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         url='https://github.com/Kemok-Repos/notification-service',
-        packages=['notificationpackage','notificationpackage.notificationmethods']
+        packages=['notificationspackage','notificationpackage.notificationmethods']
 )
