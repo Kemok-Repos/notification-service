@@ -14,5 +14,5 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         url='https://github.com/Kemok-Repos/notification-service',
-        packages=['notificationspackage','notificationpackage.notificationmethods']
+        packages=['notificationspackageke','notificationspackageke.notificationmethods']
 )
