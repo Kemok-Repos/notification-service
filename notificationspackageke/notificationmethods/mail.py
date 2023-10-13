@@ -6,10 +6,10 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def send_mail(template, user, passwd,subject,
+def send_mail(user, passwd,subject,
               to_addrs,smtp_host='smtp.gmail.com', smtp_port=587,
               reply_to='soporte@kemok.io', attachments=None, bcc=['analyst@kemok.io'],body='<p>--Emtpy--</p>',
-              **args):
+              ):
     try:
         context = ssl.create_default_context()
         server = smtplib.SMTP(smtp_host, smtp_port)
