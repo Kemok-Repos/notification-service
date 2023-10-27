@@ -1,8 +1,6 @@
 from notificationmethods.notificacion import Notificacion
 import requests
 
-
-
 class Email(Notificacion):
 
     def __init__(self, sender, api_key, host,
@@ -15,7 +13,7 @@ class Email(Notificacion):
              body='<p>--Emtpy--</p>'):
         try:
             r = requests.post(
-                f"https://api.mailgun.net:587/v3/{self.host}/messages",
+                f"https://api.mailgun.net/v3/{self.host}/messages",
                 auth=("api", self.api_key),
                 data={
                     "from": self.sender,
