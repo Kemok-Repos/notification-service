@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 from jinja2 import Environment, FileSystemLoader
 
 class Email(Notificacion):
-    def __init__(self, sender, api_key, host,mode = 'test', psw = None, port = None, from_smtp  = None
+    def __init__(self, sender, api_key, host,mode = 'test', psw = None, port = None
                 ):
         self.sender = sender
         self.host = host
@@ -17,7 +17,6 @@ class Email(Notificacion):
         self.mode = mode
         self.psw = psw
         self.port = port
-        self.from_smtp = from_smtp
 
     def send(self, to, subject, reply_to, bcc, attachments=None,
              body='<p>--Emtpy--</p>'):
@@ -48,7 +47,7 @@ class Email(Notificacion):
                 msg = MIMEMultipart()
                 msg.attach(MIMEText(body, 'html'))
                 msg['Subject'] = subject
-                msg['From'] = self.from_smtp
+                msg['From'] = self.sender
                 msg['To'] = ', '.join(to)
                 msg['reply-to'] = reply_to
                 to += bcc
