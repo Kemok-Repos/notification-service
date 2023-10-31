@@ -60,6 +60,6 @@ class Email(Notificacion):
                         part.add_header('Content-Disposition', 'attachment',
                                         filename=attachment.split('/')[-1])
                         msg.attach(part)
-                self.server.sendmail(self.sender, to, msg.as_string())
+                server.sendmail(self.sender, to, msg.as_string())
         except Exception as error:
             print(error)
