@@ -1,6 +1,6 @@
 from setuptools import setup
 
-VERSION = '0.1.5' 
+VERSION = '0.1.6' 
 DESCRIPTION = 'Paquete de notificaciones'
 LONG_DESCRIPTION = 'Paquete de canales de notificaciones de kemok'
 

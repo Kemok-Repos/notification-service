@@ -22,7 +22,7 @@ class Email(Notificacion):
              body='<p>--Emtpy--</p>'):
         try:
             if self.mode == 'prod':
-                r = requests.post(
+                response = requests.post(
                     f"https://api.mailgun.net/v3/{self.host}/messages",
                     auth=("api", self.api_key),
                     data={
@@ -35,6 +35,7 @@ class Email(Notificacion):
                         'files':attachments
                     }
                 )
+                return response
             else:
                 context = ssl.create_default_context()
                 server = smtplib.SMTP(self.host, self.port)
@@ -60,6 +61,7 @@ class Email(Notificacion):
                         part.add_header('Content-Disposition', 'attachment',
                                         filename=attachment.split('/')[-1])
                         msg.attach(part)
-                server.sendmail(self.sender, to, msg.as_string())
+                response = server.sendmail(self.sender, to, msg.as_string())
+                return response
         except Exception as error:
             print(error)
